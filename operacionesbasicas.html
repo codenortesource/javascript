@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>
+            codenorte.com
+        </title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script language="javascript">
+
+            function sumar(primerSumando,segundoSumando){
+                return 'Suma: '+(primerSumando+segundoSumando);
+            }
+
+            function restar(primerSumando,segundoSumando){
+                return 'Rsta: '+(primerSumando-segundoSumando);
+            }
+
+            function div(primerSumando,segundoSumando){
+                return 'Division: '+(primerSumando/segundoSumando);
+            }
+
+            var primerSumando = prompt("Ingrese Numero 1",primerSumando);
+            var segundoSumando = prompt("Ingrese Numero 2",segundoSumando);
+
+            primerSumando = parseInt(primerSumando);
+            segundoSumando=parseInt(segundoSumando);
+
+            alert (sumar(primerSumando,segundoSumando));
+            alert (restar(primerSumando,segundoSumando));
+            alert (div(primerSumando,segundoSumando));
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
