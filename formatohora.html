@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title></title>
+
+        <script language="Javascript" type="text/javascript">
+            
+            window.onload = mostrarELTiempo; //al iniciar la pagina se inicia.
+
+            function mostrarELTiempo() {
+                var now = new Date(); //objeto tipo Hora
+                //get para obtener hor, min,seg,    
+                document.getElementById("mostrarTiempo").innerHTML = 
+                    mostrarLaHora(now.getHours()) + mostrarCero(now.getMinutes()) +
+                    mostrarCero(now.getSeconds()) + mostrarAmPm();
+                setTimeout("mostrarELTiempo()",1000);
+	
+                function mostrarLaHora(theHour) {
+                    return (mostrarHoraMilitar() || (theHour > 0 && theHour < 13)) ? 
+                        theHour : (theHour == 0) ? 12 : theHour-12;
+                }
+	
+                function mostrarCero(inValue) {
+                    return (inValue > 9) ? ":" + inValue : ":0" + inValue;
+                }
+ 
+                function mostrarHoraMilitar() {
+                    return document.getElementById("mostrarMilit").checked;
+                    //si seleciono opcion hora Militar
+                }
+	
+                function mostrarAmPm() {
+                    return (mostrarHoraMilitar()) ? "" : (now.getHours() < 12) ? " AM" : " PM";
+                }
+            }
+
+        </script>
+    </head>
+    <body>
+        <div align="center">
+            <h2 id="mostrarTiempo"> </h2>
+            <form action="#">
+                Mostrar la hora militar?
+                <input type="radio" name="milTime" id="mostrarMilit" checked="checked" />
+                <label for="mostrarMilit">Si</label> &nbsp;&nbsp;
+                <input type="radio" name="milTime" id="noMilitar" />
+                <label for="noMilitar">No</label>
+            </form>
+        </div>
+    </body>
+</html>

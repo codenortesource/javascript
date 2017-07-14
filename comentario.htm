@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title> codigoflow.net </title>
+        <script language="javascript">
+
+            function accederAValor()
+            {
+                matriz = formulario.menuProvincia.options;  
+                //acceder a todas las opciones
+            }
+
+            function mostrarSelecion()
+            {
+                //selecciona el valor del menu Seleccionado.
+                formulario.style.value = matriz[formulario.menuProvincia.selectedIndex].text;
+            }
+        </script>
+    </head>
+    <body onload="accederAValor();">
+
+        <form name="formulario">
+            <select name="menuProvincia">
+                <option value="1">Eminem</option>
+                <option value="2">Dr. Dre</option>
+                <option value="3">D-12</option>
+                <option value="4">X-zibit</option>
+            </select>
+            <br>
+            <input type="button" value="Mostrar datos" onClick="mostrarSelecion();">
+            <input type="text" name="style">
+        </form>
+    </body>
+</html>

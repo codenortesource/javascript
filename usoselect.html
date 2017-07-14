@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"\>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Adicion de nodos</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <script type="text/javascript" language="Javascript">
+
+            function agregarNodo(inText) {
+                nuevoElemento = document.createElement("p")
+                nuevoTexto = document.createTextNode(inText)
+                nuevoElemento.appendChild(nuevoTexto)
+                docHtml = document.getElementsByTagName("body").item(0)
+                docHtml.appendChild(nuevoElemento)
+                return false
+            }
+        </script>
+        <style>
+            .t1{
+                background: silver;
+                width: 600px;
+            }
+        </style>
+    </head>
+    <body>
+        <form action="#" onsubmit="return agregarNodo(this.textField.value)">
+            <table>
+                <tr>
+                    <td>
+                        <textarea name="textField" cols=30 rows=3></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="Añadir" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

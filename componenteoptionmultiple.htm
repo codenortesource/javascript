@@ -1,0 +1,33 @@
+<html>
+    <TITLE>Go! Menu</TITLE>
+</head> 
+
+<script>
+    
+
+    function textValue(){	
+        var estadoEntero, estadoCadena	
+        estadoEntero=document.formulario.stationselect.selectedIndex	
+        estadoCadena=document.formulario.stationselect.options[estadoEntero].text	
+        document.formulario.estadoTexto.value = "Ir " + estadoCadena +"!"	
+    }
+
+   
+</script> 
+</head> 
+<BODY BGCOLOR="silver"> 
+<center>
+    Seleccione al menos un elemento
+    <form name="formulario">
+        <select name="stationselect" onChange="textValue()" multiple size="5">
+            <option>ECU
+            <option>CO
+            <option>PE
+            <option>ES
+        </select>
+        <p>
+            <input type="text" name="estadoTexto" value="" size="35" maxlength="35">
+        <p>
+    </form>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title> JS </title>
+        <script language="javascript">
+
+            function ev()
+            {
+                resultado1 = "ninguna"; 
+                
+                for (i=0; i<formulario.grupo1.length; i++)
+                {
+                    if (formulario.grupo1[i].checked) //si esta en estado check
+                    {
+                        resultado1 = formulario.grupo1[i].value; //accede al valor
+                    }
+                }
+                //imprime el valor.
+                formulario.res1.value = resultado1;
+            } 
+            
+        </script>
+    </head>
+    <body>
+        <form name="formulario">
+            <table width="300" border="0" cellspacing="0" cellpadding="4">
+                <tr>
+                    <td>
+                        Php: <input type="radio" name="grupo1" value="Php"><br>
+                        Java: <input type="radio" name="grupo1" value="Java"><br>
+                        Ruby: <input type="radio" name="grupo1" value="Ruby"><br>
+                        <input type="button" name="evaluar" value="OK" onClick="ev();"><br>
+                        <input type="text" name="res1" size="30">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
